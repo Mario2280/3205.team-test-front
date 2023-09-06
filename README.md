@@ -1,5 +1,29 @@
 # Getting Started with Create React App
 
+
+
+
+# Инструкция
+
+Бэк и фронт лежат в 2 разных репозиториях:
+- [Backend](https://github.com/Mario2280/3205.team-test-backend)
+- Front этот репозиторий
+
+В задании с беком я не совсем понял на нативной ноде вы хотели решение или с спользованияем чего-то поинтереснее поэтому сделал 2 варианта на нативной ноде [native](https://github.com/Mario2280/3205.team-test-backend/tree/native) ветка и [nest-realization](https://github.com/Mario2280/3205.team-test-backend/tree/nest-realization).
+
+Для запуска фронта нужны свободные 3000 и 3001 порт а также:
+```bash
+npm i
+npm start
+```
+Для запуска бэка
+```bash
+npm i
+npm run start:dev
+```
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
