@@ -18,7 +18,6 @@ function App() {
 			<h1 className="search-title">Авторизация</h1>
 			<form
 				className="search-form"
-				//onSubmit={handleSubmit}
 			>
 				<div className="form-group">
 					<label htmlFor="email">Email</label>
@@ -47,18 +46,6 @@ function App() {
 							setUser({ ...user, number: parseInt(inputValue) })
 							const formattedValue = inputValue.match(/.{1,2}/g)?.join('-')
 							setNumber(formattedValue ?? '')
-							//const { value } = e.target;
-							//const withoutSplit =  value.replaceAll('-','');
-							//const chars = withoutSplit.split('')
-							//const formatedChars: Array<string> = []
-							//chars.forEach((num, i) => {
-							//	formatedChars.push(num)
-							//	if ((i + 1) % 2 === 0) {
-							//		formatedChars.push('-')
-							//	}
-							//})
-							//setNumber(formatedChars.join(''));
-							//setUser({ ...user, number: parseInt(value) })
 						}}
 					/>
 				</div>
@@ -66,12 +53,15 @@ function App() {
 					className="search-button"
 					onClick={async (e) => {
 						e.preventDefault()
-						const isCorrect = await userSchema.validate(user)
-						if (!isCorrect) {
+						try {
+							await userSchema.validate(user)
+						} catch (err) {
 							alert('Неверный ввод')
 							setNumber('')
 							setUser({ email: '', number: 0 })
+							return;
 						}
+						
 						if (!requestStatus) {
 							requestStatus = axios({
 								url: 'http://localhost:3001',
@@ -94,7 +84,6 @@ function App() {
 							controller.abort()
               
 							requestStatus = null;
-              // eslint-disable-next-line no-delete-var
               controller = new AbortController();
               
 							requestStatus = axios({
