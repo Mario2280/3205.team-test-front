@@ -9,14 +9,14 @@
 - [Backend](https://github.com/Mario2280/3205.team-test-backend)
 - Front этот репозиторий
 
-В задании с беком я не совсем понял на нативной ноде вы хотели решение или с спользованияем чего-то поинтереснее поэтому сделал 2 варианта на нативной ноде [native](https://github.com/Mario2280/3205.team-test-backend/tree/native) ветка и [nest-realization](https://github.com/Mario2280/3205.team-test-backend/tree/nest-realization).
+В задании с беком я не совсем понял, на нативной ноде вы хотели решение или с использованием чего-то поинтереснее, поэтому сделал 2 варианта на нативной ноде [native](https://github.com/Mario2280/3205.team-test-backend/tree/native) ветка и [nest-realization](https://github.com/Mario2280/3205.team-test-backend/tree/nest-realization).
 
-Для запуска фронта нужны свободные 3000 и 3001 порт а также:
+Для запуска фронта нужны свободный 3000 порт а также:
 ```bash
 npm i
 npm start
 ```
-Для запуска бэка
+Для запуска бэка и свободный 3001 порт
 ```bash
 npm i
 npm run start:dev
